@@ -4,6 +4,8 @@
 
 # Overview
 We looked at the information on homes sold in King County, WA between May 2014 and May 2015 to create a predictive pricing model. <br>
+  
+To see our final notebook, [click here](https://github.com/SethKauf/King_County_Avocoders_Group_3/blob/main/Final%20Notebook.ipynb).
 
 ## Business Problem
 ### A real estate company in Seattle, WA is listing homes on their website.
