@@ -44,7 +44,7 @@ We noticed the Living Space feature (squarefootage of the homes) has the highest
 
 # First Model, Target ~ Two Highest
   We created an OLS model using the top two features.<br>
-  <img src="Images/Top_Two_OLS.png" align="center">
+  <img src="Images/First_Model_OLS.PNG" align="center">
   Although the r <sup>2</sup> is still low, it's already a little better.<br>
   
 # Feature Engineering
@@ -60,7 +60,7 @@ We noticed the Living Space feature (squarefootage of the homes) has the highest
   
   It only improved slightly as seen below, but we seemed to be on the right track.<br>
   
-  <img src="Images/Second_Model_OLS.png" align="center"><br>
+  <img src="Images/Second_Model_OLS.PNG" align="center"><br>
   
 # Final Model
   First, we stratified price to select houses at below $1,200,000, as mentioned earlier.<br>
@@ -89,7 +89,7 @@ We noticed the Living Space feature (squarefootage of the homes) has the highest
 
   Below is also a screengrab of the final model scores in OLS (non-scaled). The full model breakdown is in the final notebook.<br>
   
-  <img src="Images/Final_Model_OLS.png" align="center"><br>
+  <img src="Images/Final_Model_OLS.PNG" align="center"><br>
   
   # Regression Tests
   
