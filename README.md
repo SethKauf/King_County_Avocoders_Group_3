@@ -17,24 +17,24 @@ We looked at the information on homes sold in King County, WA between May 2014 a
 ## First we looked at a Heatmap for correlations between Price and all features
 <img src="Images/Heatmap.png" align="center"><br>
 
-We noticed the Living Space feature (Squarefootage of the homes) has the highest correlation to our Target, followed by Grade.
+We noticed the Living Space feature (squarefootage of the homes) has the highest correlation to our target, followed by the Grade feature.<br>
   
 # Exploring Price Data
-  Let's first look at the full price data in a Boxplot.<br>
+  Let's first look at the full price data in a boxplot.<br>
   <img src="Images/Full_PriceBoxPlot2.png"><br>
   This is no-good. Let's remove outliers.
   <img src="Images/No_Outliers_BoxPlot.png"><br>
   A lot of the data falls from about $70,000 to about $1,200,000, we will stratify our data on this parameter.
 
-# Exploring Living Space data  
+# Exploring Living Space Data  
   The highest correlated feature was living space.<br>
   Our first model tested directly tested this onto Price, but it had nearly no effect.<br>
   
-# Exploring Grade variable
+# Exploring Grade Feature
   
   Grade is a feature that helped us better stratify the housing prices in our dataset.<br>
   
-  They have a clear upward trend as seen below.<br>
+  It has a clear upward trend as seen below.<br>
   
   <img src="Images/1price_vs_grade.png"><br>
   
@@ -44,34 +44,42 @@ We noticed the Living Space feature (Squarefootage of the homes) has the highest
 
 # First Model, Target ~ Two Highest
   We created an OLS model using the top two features.<br>
+  <img src="Images/Top_Two_OLS.png" align="center">
   Although the r <sup>2</sup> is still low, it's already a little better.<br>
   
 # Feature Engineering
   ## Grade
   For Grade, we created dummy variables as numeric stand-ins, so we can add Grade to our upcoming model.<br>
-  This will also split Grade into multiple columns for each grade.<br>
   
   ## Zip Code
-  We grouped the zip codes together and used their average price per zip code in place of the zip code itself. This gave us our first useful feature.<br>
+  We grouped the zip codes together and used their average price per zip code in place of the zip code itself.<br>
   
-# Second Model, train_test_split on first few features.<br>
+# Second Model, train_test_split on First Few Features.<br>
   
-  We ran our train_test_split on several features, notably Living Space, Waterfront, Zip Code, and Grades.<br>
+  We ran our train_test_split on several features, notably Living Space, Waterfront, Zip Code, and Grades as dummy variables.<br>
   
-  It returned an r <sup>2</sup> of about 60.9, which is better, but its validation test was weak.<br>
+  It only improved slightly as seen below, but we seemed to be on the right track.<br>
   
-  We are on the right track.<br>
+  <img src="Images/Second_Model_OLS.png" align="center"><br>
   
 # Final Model
-  First, we stratified price to select houses at $1,200,000 and below, as mentioned earlier.<br>
+  First, we stratified price to select houses at below $1,200,000, as mentioned earlier.<br>
   
-  We kept some of our previously engineered features such as Zip Code means and the Grade columns.<br>
+  We kept some of our previously engineered features such as Zip Code price means and the Grade columns.<br>
   
-  We also dropped a lot more columns. The final used columns are:<br>
+  Here are the features we ended up using in our final model:<br>
+    * Bathrooms<br>
+    * Bedrooms<br>
+    * Grade (4-11, excl. 7)<br>
+    * House Age<br>
+    * Latitude<br>
     * Living Space<br>
-    * Grade (4-13)<br>
-    * Zip Code mean<br>
-    * Waterfront property<br>
+    * Longitude<br>
+    * Waterfront property<br>  
+    * Year Renovated<br>  
+    * Zip Code<br>
+    * Zip Code price means<br>
+    
  
   It returned an 80% effective model with a validation score of 80%.<br>
   
@@ -79,13 +87,13 @@ We noticed the Living Space feature (Squarefootage of the homes) has the highest
   
   <img src="Images/Final_Model_graph.png"><br>
 
-  Below is also a screengrab of the final model scores. The code can be seen in the final notebook.<br>
+  Below is also a screengrab of the final model scores in OLS (non-scaled). The full model breakdown is in the final notebook.<br>
   
-  
+  <img src="Images/Final_Model_OLS.png" align="center"><br>
   
   # Regression Tests
   
-  Finally, our tests for Linearity, Normality, and Homoskedasticity<br>
+  Finally, our tests for Linearity, Normality, and Homoscedasticity<br>
   
   <img src="Images/linearity_test.png"><br>
   <img src="Images/normality_test.png"><br>
