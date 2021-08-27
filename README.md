@@ -77,4 +77,24 @@ We noticed the Living Space feature (Squarefootage of the homes) has the highest
   
   Below is a graph of the actual prices transposed on the predicted prices.<br>
   
-  <img src=![image](https://user-images.githubusercontent.com/69225974/131071162-84f43159-e0a7-41d1-a975-990f246302e9.png)>
+  <img src="Images/Final_Model_graph.png"><br>
+
+  Below is also a screengrab of the final model scores. The code can be seen in the final notebook.<br>
+  
+  
+  
+  # Regression Tests
+  
+  Finally, our tests for Linearity, Normality, and Homoskedasticity<br>
+  
+  <img src="Images/linearity_test.png"><br>
+  <img src="Images/normality_test.png"><br>
+  <img src="Images/homoskedasticity_test.png"><br>
+  
+  Our tests show our model, although still somewhat affected by outliers, is mostly good for a linear regression model.
+  
+  # Next Steps
+  
+  We recommend that future iterations of the model look into other features from the original dataset, such as Latitude and Longitude, or the Year Renovated and Year Built, unscaled.<br>
+  
+  We also recommend adding other features, such as number of houses on the market in the area, the "Walking score", proximity to school(s), etc.
